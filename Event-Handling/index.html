@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myButton">Click Me!</button>
+    <button id="removeListener">Remove Listener</button>
+    <button id="dispatchEvent">Dispatch Event</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const removeButton = document.getElementById('removeListener');
+        const dispatchButton = document.getElementById('dispatchEvent');
+
+        function showAlert() {
+            alert('Button was clicked!');
+        }
+
+        button.addEventListener('click', showAlert);
+
+        removeButton.addEventListener('click', function () {
+            button.removeEventListener('click', showAlert);
+            alert('Event listener removed!');
+        });
+
+        dispatchButton.addEventListener('click', function () {
+            const clickEvent = new Event('click');
+            button.dispatchEvent(clickEvent);
+        });
+    </script>
+
+</body>
+
+</html>
