@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript DOM Content Manipulation</title>
     <style>
+        /* Style for the example boxes */
         #box {
             margin-bottom: 20px;
             padding: 10px;
@@ -19,24 +20,28 @@
 
     <h1>JavaScript DOM Content Manipulation Examples</h1>
 
+    <!-- Example for modifying innerHTML -->
     <div id="innerHTMLExample" class="box">
         <h2>innerHTML Example</h2>
         <div id="box">Hello, <b>World!</b></div>
         <button onclick="modifyInnerHTML()">Modify innerHTML</button>
     </div>
 
+    <!-- Example for modifying outerHTML -->
     <div id="outerHTMLExample" class="box">
         <h2>outerHTML Example</h2>
         <div id="box2">Hello, <b>World!</b></div>
         <button onclick="modifyOuterHTML()">Modify outerHTML</button>
     </div>
 
+    <!-- Example for modifying textContent -->
     <div id="textContentExample" class="box">
         <h2>textContent Example</h2>
         <div id="box3">Hello, <b>World!</b></div>
         <button onclick="modifyTextContent()">Modify textContent</button>
     </div>
 
+    <!-- Example for modifying innerText -->
     <div id="innerTextExample" class="box">
         <h2>innerText Example</h2>
         <div id="hiddenBox">Hello, <b>World!</b></div>
@@ -44,6 +49,7 @@
         <button onclick="showHiddenBox()">Show Hidden Box</button>
     </div>
 
+    <!-- Example for modifying outerText -->
     <div id="outerTextExample" class="box">
         <h2>outerText Example</h2>
         <div id="box4">Hello, <b>World!</b></div>
@@ -51,34 +57,35 @@
     </div>
 
     <script>
-        // innerHTML Example
+        // Function to modify innerHTML of an element
         function modifyInnerHTML() {
             const box = document.getElementById('box');
             box.innerHTML = '<p>This is new content from innerHTML!</p>';
             console.log(box.innerHTML);
         }
 
-        // outerHTML Example
+        // Function to modify outerHTML of an element
         function modifyOuterHTML() {
             const box2 = document.getElementById('box2');
             box2.outerHTML = '<section>Replaced Content from outerHTML</section>';
             console.log(box2.outerHTML);
         }
 
-        // textContent Example
+        // Function to modify textContent of an element
         function modifyTextContent() {
             const box3 = document.getElementById('box3');
             box3.textContent = 'New plain text from textContent!';
             console.log(box3.textContent);
         }
 
-        // innerText Example
+        // Function to modify innerText of an element
         function modifyInnerText() {
             const hiddenBox = document.getElementById('hiddenBox');
             hiddenBox.innerText = 'New visible text from innerText!';
             console.log(hiddenBox.innerText);
         }
 
+        // Function to display the hidden box and modify its text using innerText
         function showHiddenBox() {
             const hiddenBox = document.getElementById('hiddenBox');
             hiddenBox.style.display = 'block';
@@ -86,7 +93,7 @@
             console.log(hiddenBox.innerText);
         }
 
-        // outerText Example
+        // Function to modify outerText of an element
         function modifyOuterText() {
             const box4 = document.getElementById('box4');
             box4.outerText = 'Replaced with text from outerText!';
